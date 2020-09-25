@@ -1,0 +1,79 @@
+<html lang="en">
+   <head>
+      <link type="text/css" href="x-edible/bootstrap-editable.css" rel="stylesheet">
+      <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script> 
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+   </head>
+   <body>
+      <br />
+      <div class="row">
+         <div class="col-md-2">
+         </div>
+         <div class="col-md-6">
+            <h4 class="header-title mb-4">User Profile - Inline Editing</h4>
+            <table class="table table-striped mb-0">
+               <thead>
+                  <tr>
+                     <th style="width: 50%;">Details</th>
+                     <th>Values</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>First Name</td>
+                     <td>
+                        <a href="#" id="firstName" data-type="text" data-pk="3" data-placement="right" data-url="update.php"  data-placeholder="Required" data-title="">Rizwan</a>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>Last Name</td>
+                     <td>
+                        <a href="#" id="lastName" data-type="text" data-pk="3" data-placement="right" data-url="update.php"  data-placeholder="Required" data-title="">Shaikh</a>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>Gender</td>
+                     <td>
+                        <a href="#" id="gender" data-type="select" data-pk="3" data-placement="right" data-url="update.php"  data-placeholder="Required" data-title="">Male</a>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+      <script type="text/javascript">
+         $(document).ready(function() {
+           //toggle `popup` / `inline` mode
+           $.fn.editable.defaults.mode = 'inline';    
+           $.fn.editable.defaults.ajaxOptions = {type: "GET"};
+         
+           $('#dob').editable({
+              datepicker: {
+                  todayBtn: 'linked'
+              }
+          });  
+         
+         $('#gender').editable({
+               type: 'select',
+               title: 'Select Gender',
+               placement: 'right',
+               value: 'Male',
+               source: [
+               {value: 'Male', text: 'Male'},
+               {value: 'Female', text: 'Female'}
+               ]
+           });
+         
+         $('#firstName').editable();
+         $('#lastName').editable();
+        
+         });
+      </script>		
+      <script src="x-edible/bootstrap-editable.min.js"></script>
+      <script src="x-edible/xeditable.js"></script>
+   </body>
+</html>
